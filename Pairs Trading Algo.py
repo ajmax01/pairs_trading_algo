@@ -91,39 +91,6 @@ def backtest(ticker_pair, start_date="2020-01-01", end_date="2023-01-01", traini
 orders, portfolio_value = backtest(["PL=F", "PA=F"], start_date="2023-06-01", end_date = "2024-6-30")
 print(orders,"\n",portfolio_value)
 
-# End vision to back engineer:
-# dynamically update hedge ratio, stdev of spread
-# add exit criteria for loss cases
-# profit for each trade
-
-# dynamic parameter updates:
-# if you update too frequently you're not capturing true relationship just recent activity
-# if you never update then you risk being outdated
-# also dont update during the time a trade is open because you then move the goalposts required for exit
 
 
 
-
-
-
-pair_dict = {
-    "tickers_y_on_x": ["MSFT", "AAPL"],
-    "start_date": "2000-01-01",
-    "end_date": "2020-01-01"
-}
-
-pair_dict_recent = {
-    "tickers_y_on_x": ["PL=F", "PA=F"],
-    "start_date": "2020-01-01",
-    "end_date": "2026-08-01"
-}
-
-'''
-correlation, beta, z_of_spread =  define_pair_equation(**pair_dict_recent)
-print(f"Correlation: {correlation}\nBeta: {beta}")'''
-
-# Next step: make a chart showing the z score of spread over time, want to visualize how it reverts back to 0
-# Then: make an algorithm to buy or short when outside of a z threshold
-# Next: backtest
-# Theoretically you don't have to do this with two stocks, can be with one stock and one exotic dataset
-# also learning cointegration could prove useful
