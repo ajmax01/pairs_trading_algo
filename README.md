@@ -1,2 +1,3 @@
 # pairs_trading_algo
-Stock market trading algorithm using a pairs trading strategy.
+
+This project is a stock trading algorithm written in python using a pairs trading strategy. To begin, two candidate stocks that have historically moved together are selected. Their prices are normalized such that their average price difference over the training window is 0 and the standard deviation of this spread is taken. With this standard deviation, we can write logic to short the higher stock and buy the lower stock when the price difference is above some z score, closing the trades when the difference is below a certain z score. The program includes this trading logic and backtesting capabilities over a desired timeframe.
